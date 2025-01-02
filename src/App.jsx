@@ -3,9 +3,7 @@ import { icons } from "./utils/constants";
 function App() {
   return (
     <div className="frame-box">
-      <div className="">
-        <img src={icons.logo} alt="" className="" />
-      </div>
+      <img src={icons.logo} alt="" className="fit" />
     </div>
   );
 }
