@@ -1,6 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { encrypt, storeLocalStorageData } from "utils/helpers";
-import { api } from "services/api";
 
 const initialState = {
   authData: null,
@@ -31,18 +29,6 @@ const globalSlice = createSlice({
   },
 });
 
-export const handleLogin = (payload) => async (dispatch) => {
-  try {
-    const res = await api.post("/login", payload, {});
-    if (res?.status === 200) {
-      storeLocalStorageData({ ...res?.data, token: "token" });
-      dispatch(setAuthData(encrypt({ ...res?.data, token: "token" })));
-    }
-    return res;
-  } catch (error) {
-    return dispatch(handelCatch(error));
-  }
-};
 export const handelResponse = (res) => async () => {
   let returnValue = null;
   const status = res?.status;

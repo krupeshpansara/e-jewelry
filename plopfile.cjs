@@ -53,6 +53,11 @@ const componentGenerator = {
 // Helper to convert strings to lowercase
 const lowerCaseHelper = (str) => str.toLowerCase();
 
+const classNameHelper = (str) =>
+  str
+    .split(/(?=[A-Z])/) // Split at each capital letter
+    .map((word) => word.toLowerCase()) // Convert each part to lowercase
+    .join("-");
 // Plop configuration export
 module.exports = (plop) => {
   // Register the component generator
@@ -60,4 +65,5 @@ module.exports = (plop) => {
 
   // Register custom helpers
   plop.setHelper("lowerCase", lowerCaseHelper);
+  plop.setHelper("classNameHelper", classNameHelper);
 };
