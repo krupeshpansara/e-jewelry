@@ -1,6 +1,6 @@
 const pathMapping = {
   form: "./src/components/inputs/",
-  layout: "./src/components/layouts/",
+  layout: "./src/components/",
   page: "./src/pages/",
 };
 

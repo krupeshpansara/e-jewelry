@@ -1,9 +1,143 @@
-#home-container {
-  width: 100%;
-  height: 100%;
-  background-color: black;
+// src/components/Hero/Hero.scss
+// Variables
+$primary-color: #eab30b;
+$background-color: #3a3a3a;
+$text-color: #f4f4f4;
+$animation-duration: 0.3s;
+$content-max-width: 48rem; // 768px
+
+// Mixins
+@mixin flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@mixin button-base {
+  min-width: 200px;
+  padding: 0.75rem 2rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: all $animation-duration ease-in-out;
+  cursor: pointer;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// Main styles
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100% ;
+  @include flex-center;
   overflow: hidden;
+  background-color: $background-color;
+
+  &__video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba($background-color, 0.6),
+      rgba($background-color, 0.2)
+    );
+    z-index: 1;
+  }
+
+  &__content {
+    position: relative;
+    width: 100%;
+    max-width: $content-max-width;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+    color: $text-color;
+    z-index: 2;
+
+    &-wrapper {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
+
+      &.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &__title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+
+    &-highlight {
+      color: $primary-color;
+      font-weight: 400;
+    }
+  }
+
+  &__subtitle {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-weight: 300;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 2rem;
+
+    @media (min-width: 640px) {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  &__button {
+    @include button-base;
+
+    &--primary {
+      background-color: $primary-color;
+      color: $background-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+
+      .hero__button-icon {
+        transition: transform $animation-duration ease-in-out;
+      }
+
+      &:hover .hero__button-icon {
+        transform: rotate(12deg);
+      }
+    }
+
+    &--secondary {
+      background-color: transparent;
+      color: $text-color;
+      border: 1px solid $text-color;
+
+      &:hover {
+        background-color: $text-color;
+        color: $background-color;
+      }
+    }
+  }
 }

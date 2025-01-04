@@ -1,0 +1,28 @@
+// src/styles/_variables.scss
+$colors: (
+  'primary': #eab30b,
+  'background': #3a3a3a,
+  'text': #f4f4f4,
+  'text-dark': #333333,
+);
+
+$breakpoints: (
+  'sm': 640px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1280px,
+);
+
+$transitions: (
+  'fast': 0.2s,
+  'normal': 0.3s,
+  'slow': 0.8s,
+);
+
+$spacing: (
+  'xs': 0.25rem,
+  'sm': 0.5rem,
+  'md': 1rem,
+  'lg': 2rem,
+  'xl': 4rem,
+);
