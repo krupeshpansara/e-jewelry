@@ -1,0 +1,20 @@
+// src/components/CategoryHighlights/ImageSlider.scss
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.image-slider {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  &__image {
+    @include absolute-fill;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}

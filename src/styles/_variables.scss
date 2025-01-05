@@ -1,28 +1,51 @@
 // src/styles/_variables.scss
+$color-white: #ffffff;
+$color-black: #000000;
+$color-gray-600: #718096;
+$color-gray-200: #e4ecf7;
+
+$color-primary: gold;
+$color-border: gold;
+
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 4rem;
+$spacing-xxl: 6rem;
+
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.5rem;
+
+$border-radius-lg: 0.5rem;
+$border-radius-sm: 0.5rem;
+
 $colors: (
-  'primary': #eab30b,
-  'background': #3a3a3a,
-  'text': #f4f4f4,
-  'text-dark': #333333,
+  "primary": #eab30b,
+  "background": #3a3a3a,
+  "text": #f4f4f4,
+  "text-dark": #333333,
 );
 
 $breakpoints: (
-  'sm': 640px,
-  'md': 768px,
-  'lg': 1024px,
-  'xl': 1280px,
+  "sm": 640px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1280px,
 );
 
 $transitions: (
-  'fast': 0.2s,
-  'normal': 0.3s,
-  'slow': 0.8s,
+  "fast": 0.2s,
+  "normal": 0.3s,
+  "slow": 0.8s,
 );
 
 $spacing: (
-  'xs': 0.25rem,
-  'sm': 0.5rem,
-  'md': 1rem,
-  'lg': 2rem,
-  'xl': 4rem,
+  "xs": 0.25rem,
+  "sm": 0.5rem,
+  "md": 1rem,
+  "lg": 2rem,
+  "xl": 4rem,
 );
